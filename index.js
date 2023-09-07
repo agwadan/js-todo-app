@@ -1,9 +1,14 @@
+const addTaskForm = document.querySelector('form');
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 const addTaskButton = document.getElementById('addTask');
 const showAllButton = document.getElementById('showAll');
 const showCompletedButton = document.getElementById('showCompleted');
-const showUnCompletedButton = document.getElementById('unshowCompleted');
+const showUnCompletedButton = document.getElementById('showUncompleted');
+
+addTaskForm.addEventListener('submit', () => {
+  event.preventDefault();
+})
 
 addTaskButton.addEventListener('click', () => {
   if (taskInput.value.trim() === '') return;
@@ -19,8 +24,30 @@ addTaskButton.addEventListener('click', () => {
 })
 
 showAllButton.addEventListener('click', () => {
-  tasks = taskList.querySelectorAll('li');
+  const tasks = taskList.querySelectorAll('li');
   tasks.forEach(task => {
     task.style.display = 'block';
   });
+})
+
+showCompletedButton.addEventListener('click', () => {
+  const tasks = taskList.querySelectorAll('li');
+  tasks.forEach(task => {
+    if (task.classList.contains('completed')) {
+      task.style.display = 'block';
+    } else {
+      task.style.display = 'none';
+    }
+  })
+})
+
+showUnCompletedButton.addEventListener('click', () => {
+  const tasks = taskList.querySelectorAll('li');
+  tasks.forEach(task => {
+    if (task.classList.contains('completed')) {
+      task.style.display = 'none';
+    } else {
+      task.style.display = 'block';
+    }
+  })
 })
