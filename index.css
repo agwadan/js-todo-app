@@ -29,6 +29,16 @@ button:hover {
   background-color: #2980b9;
 }
 
+li{
+  padding: .5rem;
+  transition: .5s;
+}
+
 li.completed {
   text-decoration: line-through;
+}
+
+li:hover{
+  cursor: pointer;
+  background-color: #f4f4f4;
 }
