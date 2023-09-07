@@ -17,3 +17,10 @@ addTaskButton.addEventListener('click', () => {
   taskList.appendChild(li);
   taskInput.value = '';
 })
+
+showAllButton.addEventListener('click', () => {
+  tasks = taskList.querySelectorAll('li');
+  tasks.forEach(task => {
+    task.style.display = 'block';
+  });
+})

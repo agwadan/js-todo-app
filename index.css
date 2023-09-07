@@ -30,6 +30,7 @@ button:hover {
 }
 
 li{
+  display: block;
   padding: .5rem;
   transition: .5s;
 }
